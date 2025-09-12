@@ -12,14 +12,12 @@ class ProfileSeeder extends Seeder
         Profile::create([
             'name' => 'John Doe',
             'address' => '123 Main St',
-            'phonenumber' => '555-1234',
             'fname' => 'John',
             'lname' => 'Doe'
         ]);
         Profile::create([
             'name' => 'Jane Smith',
             'address' => '456 Oak Ave',
-            'phonenumber' => '555-5678',
             'fname' => 'Jane',
             'lname' => 'Smith'
         ]);

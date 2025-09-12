@@ -9,5 +9,5 @@ class Profile extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'address', 'phonenumber', 'fname', 'lname'];
+    protected $fillable = ['name', 'address',  'fname', 'lname'];
 }

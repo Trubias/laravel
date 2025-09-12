@@ -6,9 +6,7 @@ axios.defaults.baseURL = "http://127.0.0.1:8000";
 export default function Example() {
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
-    const [phonenumber, setPhonenumber] = useState("");
-    const [fname, setFirstname] = useState("");
-    const [lname, setLastname] = useState("");
+
     const [profiles, setProfiles] = useState([]);
 
     const handleSubmit = async (e) => {
@@ -17,16 +15,12 @@ export default function Example() {
             await axios.post("/api/register", {
                 name,
                 address,
-                phonenumber,
                 fname,
                 lname,
             });
             alert("Profile created!");
             setName("");
             setAddress("");
-            setPhonenumber("");
-            setFirstname("");
-            setLastname("");
             fetchProfiles(); // Refetch to update the table
         } catch (error) {
             alert("Error creating profile.");
@@ -62,24 +56,6 @@ export default function Example() {
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                     />
-                    <input
-                        type="text"
-                        placeholder="Phone Number"
-                        value={phonenumber}
-                        onChange={(e) => setPhonenumber(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Firstname"
-                        value={fname}
-                        onChange={(e) => setFirstname(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Lastname"
-                        value={lname}
-                        onChange={(e) => setLastname(e.target.value)}
-                    />
                     <input type="submit" value="Submit" />
                 </form>
                 <table>
@@ -88,8 +64,6 @@ export default function Example() {
                             <th>Name</th>
                             <th>Address</th>
                             <th>Phone Number</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -97,7 +71,6 @@ export default function Example() {
                             <tr key={profile.id}>
                                 <td>{profile.name}</td>
                                 <td>{profile.address || 'N/A'}</td>
-                                <td>{profile.phonenumber || 'N/A'}</td>
                                 <td>{profile.fname}</td>
                                 <td>{profile.lname}</td>
                             </tr>

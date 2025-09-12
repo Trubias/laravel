@@ -1,0 +1,61 @@
+.form-container {
+  p {
+    color: red;
+    background: aqua;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(#007bff, 0.5);
+      }
+    }
+  }
+
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+    &:hover:not(:disabled) {
+      background-color: darken(#007bff, 10%);
+    }
+
+    &:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+  }
+
+  .error {
+    color: #dc3545;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .message {
+    color: #28a745;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+}
