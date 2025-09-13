@@ -15,3 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+
+// Add ProfileForm assets
+mix.js('resources/js/ProfileForm.js', 'public/js').react()
+    .sass('resources/sass/ProfileForm.scss', 'public/css');
